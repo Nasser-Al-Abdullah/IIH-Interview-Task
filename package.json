@@ -1,0 +1,19 @@
+{
+  "name": "iih-task",
+  "version": "1.0.0",
+  "description": "Interview Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "IIH-Interview-Task"
+  },
+  "keywords": [
+    "Task"
+  ],
+  "author": "Nasser Al-Abdullah",
+  "license": "UNLICENSED"
+}
