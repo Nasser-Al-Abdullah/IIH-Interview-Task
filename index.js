@@ -28,7 +28,7 @@ prices = prices.map(price => ({
 
 
 function calculatePrices(startDate, endDate) {
-    let price = 0;
+    let final_price = 0;
     let arraySize = prices.length -1;
 
     while (startDate <= endDate) {
@@ -36,9 +36,9 @@ function calculatePrices(startDate, endDate) {
         let priceFound = false;
         // compare each date with array ranges
 
-        while(!priceFound && index >= 0) {
+        while(!priceFound) {
             if (startDate >= prices[index].start_date && startDate <= prices[index].end_date) {
-                price += prices[index].price;
+                final_price += prices[index].price;
                 priceFound = true;
             }
             index--;
@@ -46,7 +46,7 @@ function calculatePrices(startDate, endDate) {
         
         incrementDate(startDate);
     }
-    console.log(price + "$");
+    return final_price;
 }
 
 
@@ -54,7 +54,7 @@ function calculatePrices(startDate, endDate) {
 // ---------------------------------------------------------------------------------------------------------
 rl.question('Enter the start date (e.g., 1/1/2022): ', (startDate) => {
     rl.question('Enter the end date (e.g., 15/1/2022): ', (endDate) => {
-        calculatePrices(parseDate(startDate), parseDate(endDate));
+        console.log(calculatePrices(parseDate(startDate), parseDate(endDate)) + "$");
         rl.close();
     });
 });
