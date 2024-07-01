@@ -36,7 +36,7 @@ function calculatePrices(startDate, endDate) {
         let priceFound = false;
         // compare each date with array ranges
 
-        while(!priceFound) {
+        while(!priceFound && index >= 0) {
             if (startDate >= prices[index].start_date && startDate <= prices[index].end_date) {
                 price += prices[index].price;
                 priceFound = true;
